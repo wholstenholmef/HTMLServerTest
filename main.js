@@ -7,7 +7,7 @@ class Poll{
         //this.endpoint = "../server/data.json"
         //this.endpoint = "http://localhost:3000/poll"
         //this.endpoint = "https://wholstenholmef.github.io/server"
-        this.endpoint = "https://wholstenholmef.github.io/poll"
+        this.endpoint = "http://wholstenholmef.github.io/poll"
 
         this.root.insertAdjacentHTML("afterbegin", `
             <div class="poll__title">${ title }</div>
