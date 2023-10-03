@@ -14,7 +14,7 @@ app.use((req, res, next) => {
     next();
 });
 
-app.get("/poll", async(req, res) => {
+app.get("/server", async(req, res) => {
     let data = JSON.parse(await fs.readFile(dataFile, "utf-8")); 
     const totalVotes = Object.values(data).reduce((total, n) => total  += n, 0);
 
@@ -29,7 +29,7 @@ app.get("/poll", async(req, res) => {
     res.json(data);
 });
 
-app.post("/poll", async(req, res) => {
+app.post("/server", async(req, res) => {
     const data = JSON.parse(await fs.readFile(dataFile, "utf-8")); 
     if(data.hasOwnProperty(req.body.add)){
         data[req.body.add]++;
