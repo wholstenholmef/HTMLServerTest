@@ -5,9 +5,10 @@ class Poll{
         //Stores memory for selected option
         this.selected = sessionStorage.getItem("poll-selected");
         //this.endpoint = "../server/data.json"
-        this.endpoint = "http://localhost:3000/poll"
+        //this.endpoint = "http://localhost:3000/poll"
         //this.endpoint = "https://wholstenholmef.github.io/server"
-        //this.endpoint = "http://6466-186-168-158-91.ngrok-free.app/poll"
+        //this.endpoint = "https://f15d-186-168-158-91.ngrok-free.app/poll"
+        this.endpoint = "https://yummy-poets-fix.loca.lt/poll"
 
         this.root.insertAdjacentHTML("afterbegin", `
             <div class="poll__title">${ title }</div>
@@ -59,7 +60,6 @@ class Poll{
             fragment.querySelector(".poll__option-fill").style.width = `${ option.percentage }%`;
             this.root.appendChild(fragment);
         }
-        console.log(data);
     }
 }
 
