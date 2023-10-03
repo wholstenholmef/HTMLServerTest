@@ -7,8 +7,8 @@ class Poll{
         //this.endpoint = "../server/data.json"
         //this.endpoint = "http://localhost:3000/poll"
         //this.endpoint = "https://wholstenholmef.github.io/server"
-        //this.endpoint = "https://f15d-186-168-158-91.ngrok-free.app/poll"
-        this.endpoint = "https://yummy-poets-fix.loca.lt/poll"
+        this.endpoint = "https://da8f-186-168-158-91.ngrok-free.app/poll"
+        //this.endpoint = "https://every-drinks-sort.loca.lt"
 
         this.root.insertAdjacentHTML("afterbegin", `
             <div class="poll__title">${ title }</div>
@@ -17,7 +17,11 @@ class Poll{
     }
 
     async _refresh(){
-        const response = await fetch(this.endpoint);
+        const response = await fetch(this.endpoint, {
+            headers:  new Headers({
+                "ngrok-skip-browser-warning": "true",
+            })
+        });
         const data = await response.json();
 
         //Clear all options when refreshing page
@@ -46,9 +50,10 @@ class Poll{
                     fetch(this.endpoint, {
                         method: "post",
                         body: `add=${ option.label }`,
-                        headers: {
+                        headers: new Headers({
+                            "ngrok-skip-browser-warning": "true",
                             "Content-Type": "application/x-www-form-urlencoded"
-                        } 
+                        })
                     }).then(() => {
                         this.selected = option.label;
                         sessionStorage.setItem("poll-selected", option.label);

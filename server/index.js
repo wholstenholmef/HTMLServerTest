@@ -5,15 +5,19 @@ const path = require("path");
 const app = express();
 const dataFile = path.join(__dirname, "data.json");
 
-app.listen(3000, () => console.log("Server running"));
-
 //Support POSTing form data with URL encoded
 app.use(express.urlencoded({ extended : true }));
 
 //app.use(cors());
 //Enable CORS
 app.use((req, res, next) => {
-    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.set({
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Headers": "*",
+        "ngrok-skip-browser-warning": "true"
+    });
+    //res.setHeader("Access-Control-Allow-Origin", "*");
+    //res.setHeader("Bypass-Tunnel-Reminder", "*");
     //res.setHeader("ngrok-skip-browser-warning", "*");
     next();
 });
@@ -48,3 +52,5 @@ app.post("/poll", async(req, res) => {
         res.send("The entry does not exist")
     }
 });
+
+app.listen(3000, () => console.log("Server running"));
