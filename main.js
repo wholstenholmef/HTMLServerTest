@@ -6,7 +6,7 @@ class Poll{
         this.selected = sessionStorage.getItem("poll-selected");
         //this.endpoint = "../server/data.json"
         //this.endpoint = "http://localhost:3000/poll"
-        this.endpoint = "https://wholstenholmef.github.io/server/data.json"
+        this.endpoint = "https://wholstenholmef.github.io/server"
 
         this.root.insertAdjacentHTML("afterbegin", `
             <div class="poll__title">${ title }</div>
