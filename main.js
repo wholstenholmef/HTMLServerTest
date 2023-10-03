@@ -4,7 +4,8 @@ class Poll{
         this.title = title;
         //Stores memory for selected option
         this.selected = sessionStorage.getItem("poll-selected");
-        this.endpoint = "http://localhost:3000/poll"
+        this.endpoint = "../server/data.json"
+        //this.endpoint = "http://localhost:3000/poll"
 
         this.root.insertAdjacentHTML("afterbegin", `
             <div class="poll__title">${ title }</div>
@@ -66,5 +67,3 @@ const p = new Poll(
     document.querySelector(".poll"), 
     "¿Que final votas por ver?"
 );
-
-console.log(p);
