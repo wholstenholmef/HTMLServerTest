@@ -43,6 +43,5 @@ app.post("/poll", async(req, res) => {
     else{
         res.send("The entry does not exist")
     }
-
 });
-//app.listen(3000, () => console.log("Server running"));
+app.listen(3000, () => console.log("Server running"));
