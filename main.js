@@ -7,7 +7,7 @@ class Poll{
         //this.endpoint = "../server/data.json"
         //this.endpoint = "http://localhost:3000/poll"
         //this.endpoint = "https://wholstenholmef.github.io/server"
-        this.endpoint = "https://da8f-186-168-158-91.ngrok-free.app/poll"
+        this.endpoint = "https://0030-45-5-174-126.ngrok-free.app/poll"
         //this.endpoint = "https://every-drinks-sort.loca.lt"
 
         this.root.insertAdjacentHTML("afterbegin", `
