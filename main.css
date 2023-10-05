@@ -1,7 +1,7 @@
 .poll {
-    width: 1000px;
+    /*width: 80%; */
     padding: 1.5rem;
-    margin: 50px;
+    margin: 10%;
     font-family: sans-serif;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
     border-radius: 10px;

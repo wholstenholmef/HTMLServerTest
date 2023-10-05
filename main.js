@@ -4,11 +4,7 @@ class Poll{
         this.title = title;
         //Stores memory for selected option
         this.selected = sessionStorage.getItem("poll-selected");
-        //this.endpoint = "../server/data.json"
-        //this.endpoint = "http://localhost:3000/poll"
-        //this.endpoint = "https://wholstenholmef.github.io/server"
         this.endpoint = "https://8985-45-5-174-126.ngrok-free.app/poll"
-        //this.endpoint = "https://every-drinks-sort.loca.lt"
 
         this.root.insertAdjacentHTML("afterbegin", `
             <div class="poll__title">${ title }</div>
